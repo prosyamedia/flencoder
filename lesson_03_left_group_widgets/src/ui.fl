@@ -1,0 +1,63 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0311
+header_name {.h}
+code_name {.cxx}
+class UserInterface {open
+} {
+  Function {init()} {open
+  } {
+    Fl_Window main_window {
+      label Flencoder open
+      xywh {37 143 1280 720} type Double hide
+    } {
+      Fl_Group top_group {open
+        xywh {0 0 1280 50} labeltype NO_LABEL
+      } {}
+      Fl_Group left_group {
+        label {  Codec Classes} open
+        xywh {0 50 192 670} box BORDER_BOX labelfont 14 align 21
+      } {
+        Fl_Pack codec_classes {open
+          xywh {0 80 192 670}
+        } {
+          Fl_Button intermediate {
+            label Intermediate
+            tooltip {High quality editing codecs designed for post production.} xywh {20 100 192 40}
+          }
+          Fl_Button delivery {
+            label Delivery
+            tooltip {Final delivery codecs for general playback and online distribution.} xywh {10 90 192 40}
+          }
+          Fl_Button master {
+            label Master
+            tooltip {Broadcast and cinema grade masters.} xywh {20 100 192 40}
+          }
+          Fl_Button archive {
+            label Archive
+            tooltip {Long term preservation formats.} xywh {20 100 192 40}
+          }
+          Fl_Button streaming {
+            label Streaming
+            tooltip {Adaptive streaming presets for online platforms.} xywh {30 110 192 40}
+          }
+          Fl_Button web_optimized {
+            label {Web Optimized}
+            tooltip {Web ready with fast start enabled.} xywh {30 110 192 40}
+          }
+          Fl_Button quick_presets {
+            label {Quick Presets}
+            tooltip {One click presets for common workflows.} xywh {40 120 192 40}
+          }
+        }
+      }
+      Fl_Group middle_group {
+        label {  Settings} open
+        xywh {192 50 768 670} box BORDER_BOX labelfont 14 align 21
+      } {}
+      Fl_Group right_group {
+        label {  Summary} open
+        xywh {960 50 320 670} box BORDER_BOX labelfont 14 align 21
+      } {}
+    }
+  }
+}
