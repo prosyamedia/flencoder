@@ -1,1 +1,8 @@
+# Root target folder
+/target/
+
+# Lesson target folders
 lesson_*/target/
+
+# Flycheck temp builds
+target/flycheck*
