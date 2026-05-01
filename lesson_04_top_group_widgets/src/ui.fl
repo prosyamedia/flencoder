@@ -1,0 +1,78 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0311
+header_name {.h}
+code_name {.cxx}
+class UserInterface {open
+} {
+  Function {init()} {open
+  } {
+    Fl_Window main_window {
+      label Flencoder open
+      xywh {0 15 1536 937} type Double hide
+    } {
+      Fl_Group top_group {open
+        xywh {0 0 1280 50} labeltype NO_LABEL
+      } {
+        Fl_Box logo_box {
+          xywh {40 5 40 40} box FLAT_BOX
+        }
+        Fl_Box appname_box {
+          label FLEncoder
+          xywh {60 5 80 40} box FLAT_BOX
+        }
+        Fl_Box src_path_box {
+          xywh {192 10 768 30} box RSHADOW_BOX
+        }
+        Fl_Button browse_button {
+          label Browse selected
+          xywh {970 10 80 30} box RSHADOW_BOX
+        }
+      }
+      Fl_Group left_group {
+        label {  Codec Classes} open
+        xywh {0 50 192 670} box BORDER_BOX labelfont 14 align 21
+      } {
+        Fl_Pack codec_classes {open
+          xywh {0 80 192 670}
+        } {
+          Fl_Button intermediate_button {
+            label Intermediate
+            tooltip {High quality editing codecs designed for post production.} xywh {20 100 192 40}
+          }
+          Fl_Button delivery_button {
+            label Delivery
+            tooltip {Final delivery codecs for general playback and online distribution.} xywh {10 90 192 40}
+          }
+          Fl_Button master_button {
+            label Master
+            tooltip {Broadcast and cinema grade masters.} xywh {20 100 192 40}
+          }
+          Fl_Button archive_button {
+            label Archive
+            tooltip {Long term preservation formats.} xywh {20 100 192 40}
+          }
+          Fl_Button streaming_button {
+            label Streaming
+            tooltip {Adaptive streaming presets for online platforms.} xywh {30 110 192 40}
+          }
+          Fl_Button web_optimized_button {
+            label {Web Optimized}
+            tooltip {Web ready with fast start enabled.} xywh {30 110 192 40}
+          }
+          Fl_Button quick_presets_button {
+            label {Quick Presets}
+            tooltip {One click presets for common workflows.} xywh {40 120 192 40}
+          }
+        }
+      }
+      Fl_Group middle_group {
+        label {  Settings} open
+        xywh {192 50 768 670} box BORDER_BOX labelfont 14 align 21
+      } {}
+      Fl_Group right_group {
+        label {  Summary} open
+        xywh {960 50 320 670} box BORDER_BOX labelfont 14 align 21
+      } {}
+    }
+  }
+}
