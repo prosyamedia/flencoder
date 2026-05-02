@@ -1,0 +1,179 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0311
+header_name {.h}
+code_name {.cxx}
+class UserInterface {open
+} {
+  Function {init()} {open
+  } {
+    Fl_Window main_window {
+      label FLencoder open
+      xywh {10 31 1406 720} type Double hide resizable
+    } {
+      Fl_Group resize_group {open
+        xywh {0 0 1280 720} resizable
+      } {
+        Fl_Group top_group {
+          xywh {5 5 1280 50} labeltype NO_LABEL
+        } {
+          Fl_Box logo_box {
+            xywh {45 10 40 40} box FLAT_BOX
+          }
+          Fl_Box appname_box {
+            label FLEncoder
+            xywh {65 10 80 40} box FLAT_BOX
+          }
+          Fl_Group top_input_group {
+            xywh {197 15 848 30}
+          } {
+            Fl_Box src_path_box {
+              xywh {202 20 768 30} box RSHADOW_BOX
+            }
+            Fl_Button input_button {
+              label Input
+              xywh {980 20 75 30} box RSHADOW_BOX
+            }
+          }
+        }
+        Fl_Group left_group {
+          label {  Codec Classes}
+          xywh {5 55 192 670} box RSHADOW_BOX labelfont 14 align 21
+        } {
+          Fl_Pack codec_classes {open
+            xywh {5 85 192 670}
+          } {
+            Fl_Button intermediate_button {
+              label Intermediate
+              tooltip {High quality editing codecs designed for post production.} xywh {25 105 192 40}
+            }
+            Fl_Button delivery_button {
+              label Delivery
+              tooltip {Final delivery codecs for general playback and online distribution.} xywh {15 95 192 40}
+            }
+            Fl_Button master_button {
+              label Master
+              tooltip {Broadcast and cinema grade masters.} xywh {25 105 192 40}
+            }
+            Fl_Button archive_button {
+              label Archive
+              tooltip {Long term preservation formats.} xywh {25 105 192 40}
+            }
+            Fl_Button streaming_button {
+              label Streaming
+              tooltip {Adaptive streaming presets for online platforms.} xywh {35 115 192 40}
+            }
+            Fl_Button web_optimized_button {
+              label {Web Optimized}
+              tooltip {Web ready with fast start enabled.} xywh {35 115 192 40}
+            }
+            Fl_Button quick_presets_button {
+              label {Quick Presets}
+              tooltip {One click presets for common workflows.} xywh {45 125 192 40}
+            }
+          }
+        }
+        Fl_Group middle_group {
+          label Settings
+          xywh {197 55 768 670} box RSHADOW_BOX labelfont 14 align 21
+        } {
+          Fl_Pack settings_pack {open
+            xywh {280 85 660 550}
+          } {
+            Fl_Choice encoder_choice {
+              label {Encoder:  } open
+              xywh {300 80 600 40} box RSHADOW_BOX down_box BORDER_BOX
+            } {}
+            Fl_Choice container_choice {
+              label {Container:  } open
+              xywh {310 90 600 40} box RSHADOW_BOX down_box BORDER_BOX
+            } {}
+            Fl_Group video_group {
+              label {Video:  } open
+              xywh {212 180 738 160} box RSHADOW_BOX align 4
+            } {
+              Fl_Pack video_pack {open
+                xywh {290 200 638 140}
+              } {
+                Fl_Choice video_codec_choice {
+                  label {Codec:  } open
+                  xywh {310 210 600 40} box RSHADOW_BOX down_box BORDER_BOX
+                } {}
+                Fl_Choice video_format_choice {
+                  label {Format:  } open
+                  xywh {320 220 600 40} box RSHADOW_BOX down_box BORDER_BOX
+                } {}
+                Fl_Choice video_quality_choice {
+                  label {Quality:  } open
+                  xywh {330 230 600 40} box RSHADOW_BOX down_box BORDER_BOX
+                } {}
+              }
+            }
+            Fl_Group audio_group {
+              label {Audio:  } open
+              xywh {212 360 738 110} box RSHADOW_BOX align 4
+            } {
+              Fl_Pack audio_pack {open
+                xywh {290 380 638 100}
+              } {
+                Fl_Choice audio_codec_choice {
+                  label {Codec:  } open
+                  xywh {310 380 600 40} box RSHADOW_BOX down_box BORDER_BOX
+                } {}
+                Fl_Choice audio_quality_choice {
+                  label {Quality:  } open
+                  xywh {310 390 600 40} box RSHADOW_BOX down_box BORDER_BOX
+                } {}
+              }
+            }
+            Fl_Input settings_custom {
+              label {Custom:   }
+              xywh {320 500 60 40}
+            }
+            Fl_Group output_group {open
+              xywh {202 545 768 50}
+            } {
+              Fl_Box output_path_box {
+                xywh {202 555 670 30} box RSHADOW_BOX
+              }
+              Fl_Button output_button {
+                label Output
+                xywh {890 555 75 30} box RSHADOW_BOX
+              }
+            }
+          }
+        }
+        Fl_Group right_group {
+          label {  Summary} open
+          xywh {965 55 320 670} box RSHADOW_BOX labelfont 14 align 21
+        } {
+          Fl_Pack summary_pack {open
+            xywh {985 85 280 670}
+          } {
+            Fl_Text_Display summary_display {
+              xywh {995 85 260 220} box ROUNDED_FRAME color 8 align 5
+            }
+            Fl_Group {} {
+              label {👁 ffmpeg command️} open
+              xywh {995 370 260 200} box RSHADOW_BOX align 21
+            } {
+              Fl_Text_Display command_display {
+                xywh {995 390 260 180} box NO_BOX color 8 align 5
+              }
+            }
+            Fl_Group {} {open
+              xywh {995 590 260 40}
+            } {
+              Fl_Button encode {
+                label {🚀 Encode} selected
+                xywh {995 605 70 30} box RSHADOW_BOX
+              }
+              Fl_Progress encode_progress {
+                xywh {1070 605 190 30} box RSHADOW_BOX
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
