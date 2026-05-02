@@ -8,12 +8,12 @@ class UserInterface {open
   } {
     Fl_Window main_window {
       label FLencoder open
-      xywh {10 31 1406 720} type Double hide resizable
+      xywh {10 31 1280 720} type Double hide resizable
     } {
       Fl_Group resize_group {open
         xywh {0 0 1280 720} resizable
       } {
-        Fl_Group top_group {open selected
+        Fl_Group top_group {
           xywh {5 5 1280 50} labeltype NO_LABEL
         } {
           Fl_Box logo_box {
@@ -35,12 +35,12 @@ class UserInterface {open
             }
           }
         }
-        Fl_Group left_group {
-          label {  Codec Classes}
-          xywh {5 55 192 670} box RSHADOW_BOX labelfont 14 align 21
+        Fl_Group left_group {open selected
+          xywh {0 55 197 670} box RSHADOW_BOX labelfont 14 align 17
         } {
-          Fl_Pack codec_classes {open
-            xywh {5 85 192 670}
+          Fl_Pack codec_classes {
+            label {  Codec Classes} open
+            xywh {0 85 197 670}
           } {
             Fl_Button intermediate_button {
               label Intermediate
@@ -72,11 +72,11 @@ class UserInterface {open
             }
           }
         }
-        Fl_Group middle_group {
-          label Settings
-          xywh {197 55 768 670} box RSHADOW_BOX labelfont 14 align 21
+        Fl_Group middle_group {open
+          xywh {197 55 768 670} box RSHADOW_BOX labelfont 14 align 17
         } {
-          Fl_Pack settings_pack {open
+          Fl_Pack settings_pack {
+            label {  Settings} open
             xywh {280 85 660 550}
           } {
             Fl_Choice encoder_choice {
@@ -142,11 +142,11 @@ class UserInterface {open
             }
           }
         }
-        Fl_Group right_group {
-          label {  Summary} open
+        Fl_Group right_group {open
           xywh {965 55 320 670} box RSHADOW_BOX labelfont 14 align 21
         } {
-          Fl_Pack summary_pack {open
+          Fl_Pack summary_pack {
+            label {  Summary} open
             xywh {985 85 280 670}
           } {
             Fl_Text_Display summary_display {
