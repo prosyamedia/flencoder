@@ -7,7 +7,7 @@ class UserInterface {open
   Function {init()} {open
   } {
     Fl_Window main_window {
-      label FLEncoder open selected
+      label FLencoder open
       xywh {10 31 1280 720} type Double hide resizable
     } {
       Fl_Group resize_group {open
@@ -76,7 +76,7 @@ class UserInterface {open
           label Settings open
           xywh {197 55 768 670} box BORDER_BOX labelfont 14 align 21
         } {
-          Fl_Pack settings_pack {open
+          Fl_Pack settings_pack {open selected
             xywh {280 85 660 550}
           } {
             Fl_Choice settings_encoder_choice {
@@ -84,7 +84,7 @@ class UserInterface {open
               xywh {300 80 600 40} box RSHADOW_BOX down_box BORDER_BOX
             } {}
             Fl_Choice settings_container_choice {
-              label {Container:  } open
+              label {Container:  }
               xywh {310 90 600 40} box RSHADOW_BOX down_box BORDER_BOX
             } {}
             Fl_Group video_group {
@@ -125,11 +125,11 @@ class UserInterface {open
                 } {}
               }
             }
-            Fl_Choice settings_extra_flags_choice {
-              label {Custom:  }
-              xywh {320 500 600 40} box RSHADOW_BOX down_box BORDER_BOX
-            } {}
-            Fl_Group middle_output_group {open
+            Fl_Input settings_custom {
+              label {Custom:   }
+              xywh {320 500 60 40}
+            }
+            Fl_Group middle_output_group {
               xywh {202 545 768 50}
             } {
               Fl_Box settings_output_path_box {
