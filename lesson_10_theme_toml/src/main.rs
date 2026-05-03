@@ -1,12 +1,79 @@
-use fltk::{prelude::*, *, enums::Color, button::Button};
+use fltk::{prelude::*, *, enums::Color, button::Button, app::Scheme};
 use crate::flencoder_ui::UserInterface;
 use fltk_theme::{WidgetTheme, ThemeType};
 use fltk::image::SvgImage;
+use serde::Deserialize;
 
+#[derive(Deserialize)]
+struct WidgetScheme {
+    scheme: String,
+}
 
+#[derive(Deserialize)]
+struct ColorTheme {
+    theme: String,
+}
+
+#[derive(Deserialize)]
+struct ThemePreset {
+    widget_scheme: WidgetScheme,
+    color_theme: ColorTheme,
+}
 
 mod flencoder_ui {
     fl2rust_macro::include_ui!("src/ui.fl");
+}
+
+fn theme_from_str(name: &str) -> ThemeType {
+    match name.to_lowercase().as_str() {
+        "dark" => ThemeType::Dark,
+        "blue" => ThemeType::Blue,
+        "aero" => ThemeType::Aero,
+        "classic" => ThemeType::Classic,
+        "greybird" => ThemeType::Greybird,
+        "highcontrast" => ThemeType::HighContrast,
+        "metro" => ThemeType::Metro,
+        _ => ThemeType::Dark, // fallback
+    }
+}
+
+fn scheme_from_str(s: &str) -> Option<Scheme> {
+    match s.to_lowercase().as_str() {
+        "base" => Some(Scheme::Base),
+        "gtk+" => Some(Scheme::Gtk),
+        "plastic" => Some(Scheme::Plastic),
+        "gleam" => Some(Scheme::Gleam),
+        "oxy" => Some(Scheme::Oxy),
+        "none" => None, // means: do not set a scheme
+        _ => None,
+    }
+}
+
+fn apply_theme_preset(path: &str) {
+    let toml_str = match std::fs::read_to_string(path) {
+        Ok(s) => s,
+        Err(e) => {
+            eprintln!("❌ Failed to read theme preset '{}': {}", path, e);
+            return; // or exit(1)
+        }
+    };
+
+    let preset: ThemePreset = match toml::from_str(&toml_str) {
+        Ok(p) => p,
+        Err(e) => {
+            eprintln!("❌ Failed to parse theme preset '{}': {}", path, e);
+            return;
+        }
+    };
+
+    // 1. FLTK widget scheme
+    if let Some(scheme) = scheme_from_str(&preset.widget_scheme.scheme) {
+        fltk::app::set_scheme(scheme);
+    }
+
+    // 2. fltk-theme widget theme
+    let theme_type = theme_from_str(&preset.color_theme.theme);
+    WidgetTheme::new(theme_type).apply();
 }
 
 fn main() {
@@ -32,13 +99,17 @@ fn main() {
 </svg>
 "##;
 
-    let mut svg_icon = SvgImage::from_data(svg_str).expect("invalid svg");
+    let svg_icon = SvgImage::from_data(svg_str).expect("invalid svg");
 
     // Assuming 'UserInterface' is a struct you've defined 
     // or generated (e.g., using fl2rust)
     let mut ui = UserInterface::init();
     // Set as window icon
     ui.main_window.set_icon(Some(svg_icon));
+
+    // Read in scheme and theme from toml
+    apply_theme_preset("assets/toml/theme.toml");
+    //WidgetTheme::new(ThemeType::Dark).apply();
 
     // Set main window resizable to invisible group that covers all other groups
     ui.main_window.resizable(&ui.resize_group);
@@ -63,8 +134,6 @@ fn main() {
         }
     });
 
-    
-
     // Set color for all groups.
     ui.left_group.set_color(Color::Inactive);
     ui.middle_group.set_color(Color::Inactive);
@@ -88,7 +157,7 @@ fn main() {
                 for mut btn in cc.clone() {
                     btn.set_color(Color::Background);
                 };
-                println!("set {} for {}", Color::Selection, this.label());
+                println!("set {:?} for {}", Color::Selection.to_rgb(), this.label());
                 this.set_color(Color::Background2);
                 this.redraw();
                 app::redraw();
@@ -102,7 +171,6 @@ fn main() {
     // Set logo in top_group
     // THEN scale down to fit the box
     svg_logo.scale(ui.logo_box.w(), ui.logo_box.h(), true, true);
-    println!("Scale to {}x{}", ui.logo_box.w(), ui.logo_box.h());
 
     // Attach
     ui.logo_box.set_label("");

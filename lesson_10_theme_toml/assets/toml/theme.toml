@@ -1,0 +1,19 @@
+# "none"	    Classic FLTK look (default)
+# "base"	    Minimal, flat, no gradients
+# "gtk+"	    GTK‑like look (rounded, soft)
+# "plastic"	    Plastic glossy look
+# "gleam"	    Modern glossy look
+# "oxy"	        Oxygen‑style (KDE‑like)
+[widget_scheme]
+scheme = "plastic"
+
+# Aero	        Windows 7‑style
+# AquaClassic	Classic macOS Aqua
+# Blue	        Blue glossy theme
+# Classic	    Windows 95‑style
+# Dark	        Dark UI theme
+# Greybird	    XFCE Greybird theme
+# HighContrast	Accessibility high‑contrast
+# Metro	        Windows 8 Metro‑style
+[color_theme]
+theme = "Dark"

@@ -1,0 +1,17 @@
+[package]
+name = "flencoder"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+fl2rust = "0.7"
+fltk = "1.5"
+fl2rust-macro = "0.7"
+fltk-theme = "0.7"
+serde = { version = "1.0", features = ["derive"] }
+toml = "1.1.2"
+serde_json = "1.0"
+
+[build-dependencies]
+fl2rust = "0.7"
+fltk = "1.5"
