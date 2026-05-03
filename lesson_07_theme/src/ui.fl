@@ -7,8 +7,8 @@ class UserInterface {open
   Function {init()} {open
   } {
     Fl_Window main_window {
-      label FLencoder open
-      xywh {10 31 1280 720} type Double hide resizable
+      label FLEncoder open selected
+      xywh {10 31 860 570} type Double resizable visible
     } {
       Fl_Group resize_group {open
         xywh {0 0 1280 720} resizable
@@ -17,30 +17,30 @@ class UserInterface {open
           xywh {5 5 1280 50} labeltype NO_LABEL
         } {
           Fl_Box logo_box {
-            xywh {45 10 40 40} box FLAT_BOX
+            xywh {5 10 30 30} box FLAT_BOX
           }
           Fl_Box appname_box {
             label FLEncoder
-            xywh {65 10 80 40} box FLAT_BOX
+            xywh {40 10 80 30} box FLAT_BOX
           }
-          Fl_Group top_input_group {
-            xywh {197 15 848 30}
+          Fl_Group top_input_group {open
+            xywh {120 10 450 30}
           } {
             Fl_Box src_path_box {
-              xywh {202 20 768 30} box RSHADOW_BOX
+              xywh {120 10 360 30} box RSHADOW_BOX
             }
             Fl_Button input_button {
               label Input
-              xywh {980 20 75 30} box RSHADOW_BOX
+              xywh {495 10 75 30} box RSHADOW_BOX
             }
           }
         }
-        Fl_Group left_group {open selected
-          xywh {0 55 197 670} box RSHADOW_BOX labelfont 14 align 17
+        Fl_Group left_group {open
+          xywh {0 55 120 500} box RSHADOW_BOX labelfont 14 align 17
         } {
           Fl_Pack codec_classes {
-            label {  Codec Classes} open
-            xywh {0 85 197 670}
+            label {Codec Classes} open
+            xywh {0 85 120 500}
           } {
             Fl_Button intermediate_button {
               label Intermediate
@@ -72,12 +72,12 @@ class UserInterface {open
             }
           }
         }
-        Fl_Group middle_group {open
-          xywh {197 55 768 670} box RSHADOW_BOX labelfont 14 align 17
+        Fl_Group middle_group {
+          xywh {120 55 450 500} box RSHADOW_BOX labelfont 14 align 17
         } {
           Fl_Pack settings_pack {
             label {  Settings} open
-            xywh {280 85 660 550}
+            xywh {200 85 370 500}
           } {
             Fl_Choice encoder_choice {
               label {Encoder:  } open
@@ -89,10 +89,10 @@ class UserInterface {open
             } {}
             Fl_Group video_group {
               label {Video:  } open
-              xywh {212 180 738 160} box RSHADOW_BOX align 4
+              xywh {120 180 450 160} box RSHADOW_BOX align 4
             } {
               Fl_Pack video_pack {open
-                xywh {290 200 638 140}
+                xywh {200 200 370 140}
               } {
                 Fl_Choice video_codec_choice {
                   label {Codec:  } open
@@ -110,10 +110,10 @@ class UserInterface {open
             }
             Fl_Group audio_group {
               label {Audio:  } open
-              xywh {212 360 738 110} box RSHADOW_BOX align 4
+              xywh {120 360 450 110} box RSHADOW_BOX align 4
             } {
               Fl_Pack audio_pack {open
-                xywh {290 380 638 100}
+                xywh {200 380 370 100}
               } {
                 Fl_Choice audio_codec_choice {
                   label {Codec:  } open
@@ -130,24 +130,24 @@ class UserInterface {open
               xywh {320 500 60 40}
             }
             Fl_Group output_group {open
-              xywh {202 545 768 50}
+              xywh {200 545 450 50}
             } {
               Fl_Box output_path_box {
-                xywh {202 555 670 30} box RSHADOW_BOX
+                xywh {200 555 350 30} box RSHADOW_BOX
               }
               Fl_Button output_button {
                 label Output
-                xywh {890 555 75 30} box RSHADOW_BOX
+                xywh {575 555 75 30} box RSHADOW_BOX
               }
             }
           }
         }
         Fl_Group right_group {open
-          xywh {965 55 320 670} box RSHADOW_BOX labelfont 14 align 21
+          xywh {570 55 280 500} box RSHADOW_BOX labelfont 14 align 21
         } {
           Fl_Pack summary_pack {
             label {  Summary} open
-            xywh {985 85 280 670}
+            xywh {570 85 280 500}
           } {
             Fl_Text_Display summary_display {
               xywh {995 85 260 220} box ROUNDED_FRAME color 8 align 5
@@ -160,15 +160,15 @@ class UserInterface {open
                 xywh {995 390 260 180} box NO_BOX color 8 align 5
               }
             }
-            Fl_Group {} {open
-              xywh {995 590 260 40}
+            Fl_Group encode_group {open
+              xywh {570 460 280 40}
             } {
               Fl_Button encode {
                 label {🚀 Encode}
-                xywh {995 605 70 30} box RSHADOW_BOX
+                xywh {570 470 70 30} box RSHADOW_BOX
               }
               Fl_Progress encode_progress {
-                xywh {1070 605 190 30} box RSHADOW_BOX
+                xywh {660 470 190 30} box RSHADOW_BOX
               }
             }
           }
