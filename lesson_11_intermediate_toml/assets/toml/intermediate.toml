@@ -1,0 +1,26 @@
+[[codec]]
+name = "ProRes"
+encoder = "prores | prores_aw | prores_ks | prores_videotoolbox"
+container = "mov | mkv | mxf"
+video.format = "10‑bit 4:2:2 | 10‑bit 4:4:4 | 12‑bit 4:4:4:4 (alpha) | 12-bit 4:4:4:4 XQ"
+video.quality = "Proxy | 422 LT | 422 | 422 HQ | 4444 | 4444 XQ"
+audio.codec = "PCM"
+audio.quality = "16-bit | 24-bit | 32-bit"
+
+[[codec]]
+name = "CineForm"
+encoder = "cfhd | cfhd_av | cfhd_videotoolbox"
+container = "mov | avi | mkv"
+video.format = "10-bit 4:2:2 | 10-bit 4:4:4 | 12-bit 4:4:4:4 (alpha)"
+video.quality = "Low | Medium | High | Film Scan 1 | Film Scan 2 | RGB 12-bit"
+audio.codec = "PCM"
+audio.quality = "16-bit | 24-bit | 32-bit"
+
+[[codec]]
+name = "DNxHR"
+encoder = "dnxhr | dnxhd"
+container = "mov | mxf | mkv"
+video.format = "8-bit 4:2:2 | 10-bit 4:2:2 | 12-bit 4:4:4"
+video.quality = "LB | SQ | HQ | HQX | 444"
+audio.codec = "PCM"
+audio.quality = "16-bit | 24-bit | 32-bit"

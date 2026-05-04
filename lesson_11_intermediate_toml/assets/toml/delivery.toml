@@ -1,0 +1,55 @@
+# H.264 H.265 AV1 VP9 MPEG-2 MPEG-4 Part 2
+[[codec]]
+name = "H.264"
+encoder = "libx264 | h264_nvenc | h264_qsv | h264_videotoolbox | h264_amf"
+container = "mp4 | mov | mkv | ts"
+video.format = "8-bit 4:2:0 | 10-bit 4:2:0 | 8-bit 4:2:2 | 10-bit 4:2:2"
+video.quality = "ultrafast | superfast | veryfast | faster | fast | medium | slow | slower | veryslow | placebo"
+audio.codec = "AAC | PCM"
+audio.quality = "128k | 192k | 256k | 320k"
+
+[[codec]]
+name = "H.265 / HEVC"
+encoder = "libx265 | hevc_nvenc | hevc_qsv | hevc_videotoolbox | hevc_amf"
+container = "mp4 | mov | mkv | ts | mxf"
+video.format = "8-bit 4:2:0 | 10-bit 4:2:0 | 12-bit 4:2:0 | 10-bit 4:2:2 | 12-bit 4:2:2 | 10-bit 4:4:4 | 12-bit 4:4:4"
+video.quality = "ultrafast | superfast | veryfast | faster | fast | medium | slow | slower | veryslow | placebo"
+audio.codec = "AAC | PCM | Opus | AC-3"
+# PCM 16-bit 24-bit 32-bit int 32-bit float
+audio.quality = "128k | 192k | 256k | 320k"
+
+[[codec]]
+name = "AV1"
+encoder = "libaom-av1 | svt-av1 | rav1e | av1_nvenc | av1_qsv | av1_videotoolbox"
+container = "mp4 | mkv | webm | mov"
+video.format = "8-bit 4:2:0 | 10-bit 4:2:0 | 12-bit 4:2:0 | 10-bit 4:4:4 | 12-bit 4:4:4"
+video.quality = "0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10"
+audio.codec = "Opus | AAC | PCM | FLAC"
+audio.quality = "128k | 192k | 256k | 320k"
+
+[[codec]]
+name = "VP9"
+encoder = "libvpx-vp9 | vp9_vaapi"
+container = "webm | mkv | mp4 | mov"
+video.format = "8-bit 4:2:0 | 10-bit 4:2:0 | 12-bit 4:2:0"
+video.quality = "0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8"
+audio.codec = "Opus | Vorbis | AAC | PCM"
+audio.quality = "128k | 192k | 256k | 320k"
+
+[[codec]]
+name = "MPEG-2"
+encoder = "mpeg2video | mpeg2_qsv | mpeg2_vaapi"
+container = "mpg | ts | m2ts | vob | mxf | mov"
+video.format = "8-bit 4:2:0 | 8-bit 4:2:2 | 8-bit 4:4:4"
+video.quality = "1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10"
+audio.codec = "MP2 | AC-3 | PCM"
+audio.quality = "128k | 192k | 256k | 320k"
+
+[[codec]]
+name = "MPEG-4 Part 2"
+encoder = "mpeg4 | libxvid | mpeg4_qsv | mpeg4_vaapi"
+container = "mp4 | avi | mkv | mov"
+video.format = "8-bit 4:2:0 | 8-bit 4:2:2"
+video.quality = "1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10"
+audio.codec = "AAC | MP3 | AC-3 | PCM"
+audio.quality = "128k | 192k | 256k | 320k"

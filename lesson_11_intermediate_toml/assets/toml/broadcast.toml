@@ -1,0 +1,58 @@
+# JPEG2000 mxf DCP / IMF JPEG2000 mxf / XDCAM HD / AVC-Intra 100 / XAVC Intra / AS-11 UK DPP 
+
+[[codec]]
+name = "JPEG2000 DCP"
+encoder = "jpeg2000 | libopenjpeg"
+container = "mxf"
+video.format = "12-bit 4:4:4 XYZ"
+video.quality = "Cinema 2K | Cinema 4K | 24fps | 48fps"
+audio.codec = "PCM"
+audio.quality = "24-bit"
+
+
+[[codec]]
+name = "JPEG2000 MXF (IMF)"
+encoder = "jpeg2000 | libopenjpeg"
+container = "mxf"
+video.format = "10-bit 4:2:2 | 12-bit 4:4:4"
+video.quality = "IMF App2e | Broadcast"
+audio.codec = "PCM"
+audio.quality = "24-bit | 32-bit"
+
+
+[[codec]]
+name = "XDCAM HD"
+encoder = "mpeg2video"
+container = "mxf"
+video.format = "8-bit 4:2:0 | 8-bit 4:2:2"
+video.quality = "35Mbps | 50Mbps"
+audio.codec = "PCM"
+audio.quality = "16-bit | 24-bit"
+
+[[codec]]
+name = "AVC-Intra 100"
+encoder = "libx264 | h264_qsv | h264_videotoolbox | h264_nvenc"
+container = "mxf"
+video.format = "10-bit 4:2:2"
+video.quality = "100Mbps"
+audio.codec = "PCM"
+audio.quality = "24-bit"
+
+[[codec]]
+name = "XAVC Intra"
+encoder = "libx264 | h264_qsv | h264_videotoolbox | h264_nvenc"
+container = "mxf"
+video.format = "10-bit 4:2:2"
+video.quality = "Class100 | Class300 | Class480"
+audio.codec = "PCM"
+audio.quality = "24-bit"
+
+[[codec]]
+name = "AS-11 UK DPP"
+encoder = "mpeg2video | libx264"
+container = "mxf"
+video.format = "8-bit 4:2:2 | 10-bit 4:2:2"
+video.quality = "XDCAMHD50 | AVCIntra100"
+audio.codec = "PCM"
+audio.quality = "24-bit"
+

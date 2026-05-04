@@ -1,0 +1,123 @@
+# ============================
+# AV1 (libaom) — .webm slow
+# ============================
+[[codec]]
+name = "AV1 (libaom)"
+encoder = "libaom-av1"
+container = "webm"
+
+[codec.video]
+format = "av1"
+quality = "high | standard | low"
+
+[codec.audio]
+codec = "opus"
+quality = "high | standard | low"
+
+
+
+# ============================
+# AV1 (SVT-AV1) — .webm fast
+# ============================
+[[codec]]
+name = "AV1 (SVT-AV1)"
+encoder = "svt-av1"
+container = "webm"
+
+[codec.video]
+format = "av1"
+quality = "high | standard | low"
+
+[codec.audio]
+codec = "opus"
+quality = "high | standard | low"
+
+
+
+# ============================
+# VP9 (2-pass) — .webm
+# ============================
+[[codec]]
+name = "VP9 (2-pass)"
+encoder = "libvpx-vp9"
+container = "webm"
+
+[codec.video]
+format = "vp9"
+quality = "high | standard | low"
+
+[codec.audio]
+codec = "opus"
+quality = "high | standard | low"
+
+
+
+# ============================
+# H.264 fast-start — .mp4
+# ============================
+[[codec]]
+name = "H.264 fast-start"
+encoder = "libx264"
+container = "mp4"
+
+[codec.video]
+format = "h264"
+quality = "high | standard | low"
+
+[codec.audio]
+codec = "aac"
+quality = "high | standard | low"
+
+
+
+# ============================
+# HEVC (Safari) — .mp4
+# ============================
+[[codec]]
+name = "HEVC (Safari)"
+encoder = "libx265"
+container = "mp4"
+
+[codec.video]
+format = "hevc"
+quality = "high | standard | low"
+
+[codec.audio]
+codec = "aac"
+quality = "high | standard | low"
+
+
+
+# ============================
+# WebM (VP8) — legacy
+# ============================
+[[codec]]
+name = "WebM (VP8)"
+encoder = "libvpx"
+container = "webm"
+
+[codec.video]
+format = "vp8"
+quality = "high | standard | low"
+
+[codec.audio]
+codec = "vorbis"
+quality = "high | standard | low"
+
+
+
+# ============================
+# WebM generic — .webm
+# ============================
+[[codec]]
+name = "WebM generic"
+encoder = "libvpx-vp9"
+container = "webm"
+
+[codec.video]
+format = "webm"
+quality = "high | standard | low"
+
+[codec.audio]
+codec = "opus"
+quality = "high | standard | low"

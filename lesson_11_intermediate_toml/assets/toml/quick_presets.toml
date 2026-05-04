@@ -1,0 +1,92 @@
+# ============================================
+# Web Delivery — H.264 MP4
+# ============================================
+[[codec]]
+name = "Web Delivery"
+codec = "H.264"
+encoder = "libx264 | h264_qsv | h264_nvenc | h264_amf | h264_videotoolbox"
+container = "mp4"
+
+[codec.video]
+format = "8-bit 4:2:0"
+quality = "23"
+
+[codec.audio]
+codec = "AAC"
+quality = "192k"
+
+
+
+# ============================================
+# Edit Master — ProRes 422 HQ
+# ============================================
+[[codec]]
+name = "Edit Master"
+codec = "ProRes"
+encoder = "prores | prores_ks | prores_aw | prores_videotoolbox"
+container = "mov"
+
+[codec.video]
+format = "10-bit 4:2:2"
+quality = "422 HQ"
+
+[codec.audio]
+codec = "PCM"
+quality = "24-bit"
+
+
+
+# ============================================
+# Archive Lossless — FFV1
+# ============================================
+[[codec]]
+name = "Archive Lossless"
+codec = "FFV1"
+encoder = "ffv1"
+container = "mkv"
+
+[codec.video]
+format = "10-bit 4:2:2"
+quality = "Lossless"
+
+[codec.audio]
+codec = "PCM"
+quality = "24-bit"
+
+
+
+# ============================================
+# 4K HDR Streaming — HEVC Main10
+# ============================================
+[[codec]]
+name = "4K HDR Streaming"
+codec = "H.265 / HEVC"
+encoder = "libx265 | hevc_qsv | hevc_nvenc | hevc_amf | hevc_videotoolbox"
+container = "mp4"
+
+[codec.video]
+format = "10-bit 4:2:0"
+quality = "18"
+
+[codec.audio]
+codec = "AAC"
+quality = "320k"
+
+
+
+# ============================================
+# HLS Package — H.264 ABR Ladder
+# ============================================
+[[codec]]
+name = "HLS Package"
+codec = "H.264"
+encoder = "libx264 | h264_qsv | h264_nvenc | h264_amf | h264_videotoolbox"
+container = "hls"
+
+[codec.video]
+format = "8-bit 4:2:0"
+quality = "ABR Ladder"
+
+[codec.audio]
+codec = "AAC"
+quality = "128k"

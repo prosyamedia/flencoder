@@ -1,0 +1,111 @@
+# ============================================
+# HLS H.264 — ABR Ladder
+# ============================================
+[[codec]]
+name = "HLS H.264"
+codec = "HLS H.264"
+encoder = "libx264 | h264_qsv | h264_nvenc | h264_amf | h264_videotoolbox"
+container = "m3u8"
+
+[codec.video]
+format = "8-bit 4:2:0"
+quality = "ABR Ladder"
+
+[codec.audio]
+codec = "AAC"
+quality = "128k"
+
+
+
+# ============================================
+# HLS HEVC 4K — 10-bit 4:2:0 HDR
+# ============================================
+[[codec]]
+name = "HLS HEVC 4K"
+codec = "HLS HEVC"
+encoder = "libx265 | hevc_qsv | hevc_nvenc | hevc_amf | hevc_videotoolbox"
+container = "m3u8"
+
+[codec.video]
+format = "10-bit 4:2:0"
+quality = "4K HDR"
+
+[codec.audio]
+codec = "AAC"
+quality = "192k"
+
+
+
+# ============================================
+# DASH AV1 — ABR Ladder
+# ============================================
+[[codec]]
+name = "DASH AV1"
+codec = "DASH AV1"
+encoder = "libaom-av1 | av1_qsv | av1_nvenc | av1_amf"
+container = "mpd"
+
+[codec.video]
+format = "8-bit 4:2:0"
+quality = "ABR Ladder"
+
+[codec.audio]
+codec = "Opus"
+quality = "128k"
+
+
+
+# ============================================
+# DASH H.265 4K — 10-bit 4:2:0
+# ============================================
+[[codec]]
+name = "DASH H.265 4K"
+codec = "DASH H.265"
+encoder = "libx265 | hevc_qsv | hevc_nvenc | hevc_amf | hevc_videotoolbox"
+container = "mpd"
+
+[codec.video]
+format = "10-bit 4:2:0"
+quality = "4K"
+
+[codec.audio]
+codec = "AAC"
+quality = "192k"
+
+
+
+# ============================================
+# CMAF H.264 Unified ABR
+# ============================================
+[[codec]]
+name = "CMAF H.264 Unified ABR"
+codec = "CMAF H.264"
+encoder = "libx264 | h264_qsv | h264_nvenc | h264_amf | h264_videotoolbox"
+container = "cmaf"
+
+[codec.video]
+format = "8-bit 4:2:0"
+quality = "Unified ABR"
+
+[codec.audio]
+codec = "AAC"
+quality = "128k"
+
+
+
+# ============================================
+# Live Ingest (SRT / RTMP)
+# ============================================
+[[codec]]
+name = "Live Ingest (SRT / RTMP)"
+codec = "SRT H.264 | RTMP H.264"
+encoder = "libx264 | h264_qsv | h264_nvenc | h264_amf | h264_videotoolbox"
+container = "flv"
+
+[codec.video]
+format = "8-bit 4:2:0"
+quality = "Live"
+
+[codec.audio]
+codec = "AAC"
+quality = "128k"

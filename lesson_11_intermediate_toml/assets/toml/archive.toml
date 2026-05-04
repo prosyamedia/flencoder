@@ -1,0 +1,56 @@
+[[codec]]
+name = "FFV1"
+encoder = "ffv1"
+container = "mkv | mov | avi | mxf"
+
+video.format = "8-bit 4:2:0 | 8-bit 4:2:2 | 10-bit 4:2:2 | 12-bit 4:2:2 | 12-bit 4:4:4"
+video.quality = "Level3 | Level4 | Lossless"
+
+audio.codec = "PCM"
+audio.quality = "16-bit | 24-bit | 32-bit"
+
+[[codec]]
+name = "Uncompressed 4:2:2"
+encoder = "rawvideo"
+container = "mov | avi | mxf"
+
+video.format = "8-bit 4:2:2 | 10-bit 4:2:2"
+video.quality = "Lossless"
+
+audio.codec = "PCM"
+audio.quality = "16-bit | 24-bit | 32-bit"
+
+[[codec]]
+name = "HuffYUV"
+encoder = "huffyuv"
+container = "avi | mkv"
+
+video.format = "8-bit 4:2:2 | 8-bit 4:4:4"
+video.quality = "Lossless"
+
+audio.codec = "PCM"
+audio.quality = "16-bit | 24-bit"
+
+[[codec]]
+name = "Ut Video"
+encoder = "utvideo"
+container = "mov | avi | mkv"
+
+video.format = "8-bit 4:2:0 | 8-bit 4:2:2 | 8-bit 4:4:4 | 10-bit 4:2:2 | 10-bit 4:4:4"
+video.quality = "Lossless"
+
+audio.codec = "PCM"
+audio.quality = "16-bit | 24-bit | 32-bit"
+
+[[codec]]
+name = "TIFF Sequence"
+encoder = "tiff"
+container = "image_sequence"
+
+video.format = "8-bit RGB | 16-bit RGB | 16-bit RGBA"
+video.quality = "Lossless | LZW | ZIP | Deflate"
+
+audio.codec = "None"
+audio.quality = ""
+
+
